@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ninghui_flutter/LoginPage.dart';
 import 'package:ninghui_flutter/model/post.dart';
 
 void main() => runApp(MyApp());
@@ -9,15 +10,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: GridViewPage(),
+      home: Home(),
       theme: ThemeData(
         primaryColor: Colors.yellow
       ),
     );
   }
 }
-
-
 
 class Horizontal extends StatelessWidget{
   @override
@@ -77,6 +76,7 @@ class GridViewPage extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(
         title: Text(titlew),
+
       ),
       body: GridView.count(
         crossAxisCount: 3,
