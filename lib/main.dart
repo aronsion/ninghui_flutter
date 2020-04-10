@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ninghui_flutter/LoginPage.dart';
-import 'package:ninghui_flutter/model/post.dart';
+import 'package:ninghui_flutter/pages/BottomNavigationBarPage.dart';
+import 'package:ninghui_flutter/pages/DrawerPage.dart';
+import 'package:ninghui_flutter/pages/PhotoListView.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,154 +13,68 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Home(),
       theme: ThemeData(
-        primaryColor: Colors.yellow
-      ),
+          primaryColor: const Color(0xFFF16554),
+          highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
+          splashColor: Colors.white70),
     );
   }
 }
 
-class Horizontal extends StatelessWidget{
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('基础列表'),
-      ),
-      body: Container(
-        margin: EdgeInsets.symmetric(vertical: 20.0),
-        height: 200.0,
-        child: ListView(
-          scrollDirection: Axis.horizontal,
+    return DefaultTabController(
+      length: 10,
+      child: Scaffold(
+        backgroundColor: Colors.grey[100],
+        appBar: AppBar(
+          title: Text('NINGHUI'),
+//          leading: IconButton(
+//              icon: Icon(Icons.list),
+//              tooltip: 'Navigation',
+//              onPressed: () => debugPrint("Navigaton button is pressed")),
+          actions: <Widget>[
+            IconButton(
+                icon: Icon(Icons.search),
+                tooltip: 'Search',
+                onPressed: () => debugPrint("Search button is pressed"))
+          ],
+          elevation: 0.0,
+          bottom: TabBar(
+            unselectedLabelColor: Colors.white,
+            indicatorColor: const Color(0xFFF16554),
+            isScrollable: true,
+            indicatorSize: TabBarIndicatorSize.label,
+            tabs: <Widget>[
+              Tab(text: '首页',),
+              Tab(text: '数码',),
+              Tab(text: '手机',),
+              Tab(text: '图书',),
+              Tab(text: '生鲜',),
+              Tab(text: '美妆',),
+              Tab(text: '电脑办公',),
+              Tab(text: '食品',),
+              Tab(text: '家装',),
+              Tab(text: '运动',)
+            ],
+          ),
+        ),
+        body: TabBarView(
           children: <Widget>[
-            Container(
-              width: 160.0,
-              color: Colors.lightBlue,
-            ),
-            Container(
-              width: 160.0,
-              color: Colors.lightBlue,
-            ),
-            Container(
-              width: 160.0,
-              color: Colors.green,
-              child: Column(
-                children: <Widget>[
-                  Text('水平',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 36.0),),
-                  Text('列表',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 36.0),),
-                  Icon(Icons.alarm)
-                ],
-              ),
-            ),
-            Container(
-              width: 160.0,
-              color: Colors.amberAccent,
-            ),
-            Container(
-              width: 160.0,
-              color: Colors.cyan,
-            ),
-            Container(
-              width: 160.0,
-              color: Colors.pinkAccent,
-            ),
+            PhotoListView(),
+            Icon(Icons.change_history,size: 128.0,color: Colors.black12,),
+            Icon(Icons.directions_bike,size:128.0,color: Colors.black12,),
+            PhotoListView(),
+            Icon(Icons.change_history,size: 128.0,color: Colors.black12,),
+            Icon(Icons.directions_bike,size:128.0,color: Colors.black12,),
+            PhotoListView(),
+            Icon(Icons.change_history,size: 128.0,color: Colors.black12,),
+            Icon(Icons.directions_bike,size:128.0,color: Colors.black12,),
+            PhotoListView(),
           ],
         ),
-      )
-    );
-  }
-}
-
-class GridViewPage extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    final titlew ='网格列表';
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(titlew),
-
-      ),
-      body: GridView.count(
-        crossAxisCount: 3,
-        primary: true,
-        padding: EdgeInsets.all(8.0),
-        crossAxisSpacing: 10.0,
-        children: <Widget>[
-          Image.network(postList[0].imageUrl),
-          Image.network(postList[1].imageUrl),
-          Image.network(postList[2].imageUrl),
-          Image.network(postList[3].imageUrl),
-          Image.network(postList[4].imageUrl),
-          Image.network(postList[5].imageUrl),
-          Image.network(postList[6].imageUrl),
-          Image.network(postList[7].imageUrl),
-          Image.network(postList[8].imageUrl),
-          Image.network(postList[0].imageUrl),
-          Image.network(postList[1].imageUrl),
-          Image.network(postList[2].imageUrl),
-          Image.network(postList[3].imageUrl),
-          Image.network(postList[4].imageUrl),
-          Image.network(postList[5].imageUrl),
-          Image.network(postList[6].imageUrl),
-          Image.network(postList[7].imageUrl),
-          Image.network(postList[8].imageUrl),
-          Image.network(postList[0].imageUrl),
-          Image.network(postList[1].imageUrl),
-          Image.network(postList[2].imageUrl),
-          Image.network(postList[3].imageUrl),
-          Image.network(postList[4].imageUrl),
-          Image.network(postList[5].imageUrl),
-          Image.network(postList[6].imageUrl),
-          Image.network(postList[7].imageUrl),
-          Image.network(postList[8].imageUrl),
-          Image.network(postList[0].imageUrl),
-          Image.network(postList[1].imageUrl),
-          Image.network(postList[2].imageUrl),
-          Image.network(postList[3].imageUrl),
-          Image.network(postList[4].imageUrl),
-          Image.network(postList[5].imageUrl),
-          Image.network(postList[6].imageUrl),
-          Image.network(postList[7].imageUrl),
-          Image.network(postList[8].imageUrl),
-        ],
-      ),
-    );
-  }
-
-}
-
-class Home extends StatelessWidget{
-  Widget _listItemBuilder(BuildContext context,int index){
-    return Container(
-      color: Colors.white,
-      margin: EdgeInsets.all(8.0),
-      child: Column(
-        children: <Widget>[
-          Image.network(postList[index].imageUrl),
-          SizedBox(height: 16.0,),
-          Text(
-            postList[index].title,
-            style: Theme.of(context).textTheme.title,
-          ),
-          Text(
-            postList[index].author,
-            style: Theme.of(context).textTheme.subhead,
-          ),
-          SizedBox(height: 16.0,)
-        ],
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('NINGHUI'),
-        elevation: 0.0, //阴影属性
-      ),
-      body: ListView.builder(
-        itemCount: postList.length,
-          itemBuilder: _listItemBuilder
+        drawer: DrawerPage(),
+        bottomNavigationBar: BottomNavigationBarPage()
       ),
     );
   }
