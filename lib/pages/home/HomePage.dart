@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/BasicPage.dart';
+import 'package:ninghui_flutter/pages/home/tabPage/LayoutPage.dart';
 import '../main/DrawerPage.dart';
 import '../main/PhotoListView.dart';
 
@@ -42,9 +43,7 @@ class HomePage extends StatelessWidget{
             children: <Widget>[
               PhotoListView(),
               BasicPage(),
-              Center(
-                child: Text('手机',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18.0),),
-              ),
+              LayoutPage(),
               Center(
                 child: Text('图书',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18.0),),
               ),
