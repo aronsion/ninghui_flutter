@@ -17,35 +17,36 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class GridViewBuilde extends StatefulWidget{
+class GridViewBuilde extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return _GridViewStateBuilder();
   }
 }
 
-class _GridViewStateBuilder extends State<GridViewBuilde>{
-
-  Widget _gridViewItembuilder(BuildContext context,int index){
+class _GridViewStateBuilder extends State<GridViewBuilde> {
+  Widget _gridViewItembuilder(BuildContext context, int index) {
     return Container(
-      child: Image.network(
-        postList[index].imageUrl,
-        fit: BoxFit.cover
-      ),
+      child: Image.network(postList[index].imageUrl, fit: BoxFit.cover),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('照片墙'),
+        elevation: 1.0,
+      ),
+      body: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
-          crossAxisSpacing: 8.0,
-          mainAxisSpacing: 8.0
+            crossAxisSpacing: 8.0,
+            mainAxisSpacing: 8.0
         ),
         itemBuilder: _gridViewItembuilder,
-      itemCount: postList.length,
+        itemCount: postList.length,
+      ),
     );
   }
 }
