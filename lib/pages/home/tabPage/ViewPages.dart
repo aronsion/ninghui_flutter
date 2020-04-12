@@ -5,7 +5,51 @@ import 'package:ninghui_flutter/model/post.dart';
 class ViewPages extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _ViewPageBuilder();
+    return GridViewBuilder();
+  }
+}
+
+class GridViewBuilder extends State<ViewPages> {
+  Widget _gridViewBuilder(BuildContext context, int index) {
+    return Container(
+      child: Image.network(postList[index].imageUrl,fit: BoxFit.cover,),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3, crossAxisSpacing: 8.0, mainAxisSpacing: 8.0),
+      itemBuilder: _gridViewBuilder,
+      itemCount: postList.length,
+    );
+  }
+}
+
+class GridViewState extends State<ViewPages> {
+  List<Widget> _builderTiles(int length) {
+    return List.generate(length, (int index) {
+      return Container(
+        color: Colors.grey[200],
+        alignment: Alignment(0.0, 0.0),
+        child: Text(
+          'Item $index',
+          style: TextStyle(fontSize: 18.0, color: Colors.blueAccent[200]),
+        ),
+      );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.count(
+      crossAxisCount: 3,
+      crossAxisSpacing: 16.0,
+      mainAxisSpacing: 16.0,
+      scrollDirection: Axis.horizontal,
+      children: _builderTiles(100),
+    );
   }
 }
 
