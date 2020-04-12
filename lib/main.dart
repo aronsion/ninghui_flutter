@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ninghui_flutter/PostData.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,53 +12,40 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: GridViewBuilde(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-
+class GridViewBuilde extends StatefulWidget{
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return _GridViewStateBuilder();
+  }
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class _GridViewStateBuilder extends State<GridViewBuilde>{
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+  Widget _gridViewItembuilder(BuildContext context,int index){
+    return Container(
+      child: Image.network(
+        postList[index].imageUrl,
+        fit: BoxFit.cover
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
+    return GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+          crossAxisSpacing: 8.0,
+          mainAxisSpacing: 8.0
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        itemBuilder: _gridViewItembuilder,
+      itemCount: postList.length,
     );
   }
 }
