@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/BasicPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/LayoutPage.dart';
+import 'package:ninghui_flutter/pages/home/tabPage/SliverPages.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/ViewPages.dart';
 import '../main/DrawerPage.dart';
 import '../main/PhotoListView.dart';
@@ -46,9 +47,7 @@ class HomePage extends StatelessWidget{
               BasicPage(),
               LayoutPage(),
               ViewPages(),
-              Center(
-                child: Text('生鲜',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18.0),),
-              ),
+              SliverPages(),
               Center(
                 child: Text('美妆',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18.0),),
               ),
