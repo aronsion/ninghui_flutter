@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/BasicPage.dart';
+import 'package:ninghui_flutter/pages/home/tabPage/FormPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/LayoutPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/NavigatorPages.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/SliverPages.dart';
@@ -50,9 +51,10 @@ class HomePage extends StatelessWidget{
               ViewPages(),
               SliverPages(),
               NavigatorPages(),
-              Center(
-                child: Text('电脑办公',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18.0),),
-              ),
+              FormPage(),
+//              Center(
+//                child: Text('电脑办公',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18.0),),
+//              ),
               Center(
                 child: Text('食品',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18.0),),
               ),
