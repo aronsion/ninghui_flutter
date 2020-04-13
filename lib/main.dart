@@ -36,7 +36,7 @@ class _GridViewStateBuilder extends State<GridViewBuilde> {
     return Scaffold(
       appBar: AppBar(
         title: Text('照片墙'),
-        elevation: 1.0,
+        elevation: 2.0,
       ),
       body: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
