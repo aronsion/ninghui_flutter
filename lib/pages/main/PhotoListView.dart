@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ninghui_flutter/model/post.dart';
+import 'package:ninghui_flutter/pages/home/detail/PostShowPages.dart';
 
 class PhotoListView extends StatelessWidget {
 
@@ -7,19 +8,40 @@ class PhotoListView extends StatelessWidget {
     return Container(
       color: Colors.white,
       margin: EdgeInsets.all(8.0),
-      child: Column(
+      child: Stack(
         children: <Widget>[
-          Image.network(postList[index].imageUrl),
-          SizedBox(height: 16.0,),
-          Text(
-            postList[index].title,
-            style: Theme.of(context).textTheme.title,
+          Column(
+            children: <Widget>[
+              AspectRatio(
+                aspectRatio: 16/9,
+                child: Image.network(postList[index].imageUrl,fit: BoxFit.cover,),
+              ),
+              SizedBox(height: 16.0,),
+              Text(
+                postList[index].title,
+                style: Theme.of(context).textTheme.title,
+              ),
+              Text(
+                postList[index].author,
+                style: Theme.of(context).textTheme.subhead,
+              ),
+              SizedBox(height: 16.0,)
+            ],
           ),
-          Text(
-            postList[index].author,
-            style: Theme.of(context).textTheme.subhead,
-          ),
-          SizedBox(height: 16.0,)
+          Positioned.fill(
+            child: Material(
+              color: Colors.transparent,
+              child: InkWell(
+                splashColor: Colors.white.withOpacity(0.3),
+                highlightColor: Colors.white.withOpacity(0.1),
+                onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context)=> PostShowPages(post:postList[index])
+                  ));
+                },
+              ),
+            ),
+          )
         ],
       ),
     );
