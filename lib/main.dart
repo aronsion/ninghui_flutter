@@ -48,6 +48,9 @@ class _GridViewStateBuilder extends State<GridViewBuilde> {
         _currentBody = HomePage();
         break;
     }
+    setState(() {
+      _currentIndex = index;
+    });
   }
 
   @override
