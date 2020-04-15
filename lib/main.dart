@@ -26,17 +26,29 @@ class GridViewBuilde extends StatefulWidget {
 }
 
 class _GridViewStateBuilder extends State<GridViewBuilde> {
-
   int _currentIndex = 0;
 
   Widget _currentBody = HomePage();
 
-  void _currentTap(int index){
-
+  void _currentTap(int index) {
+    switch (index) {
+      case 0:
+        _currentBody = HomePage();
+        break;
+      case 1:
+        _currentBody = HomePage();
+        break;
+      case 2:
+        _currentBody = HomePage();
+        break;
+      case 3:
+        _currentBody = HomePage();
+        break;
+      case 4:
+        _currentBody = HomePage();
+        break;
+    }
   }
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -45,15 +57,21 @@ class _GridViewStateBuilder extends State<GridViewBuilde> {
         title: Text('照片墙'),
         elevation: 2.0,
       ),
-      body:_currentBody,
+      body: _currentBody,
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
+        type: BottomNavigationBarType.fixed,
+        showUnselectedLabels: true,
+        selectedItemColor: const Color(0xffff678f),
+        unselectedItemColor: const Color(0xff666666),
         items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(title: Text('首页'),icon: Icon(Icons.home)),
-          BottomNavigationBarItem(title: Text('微淘'),icon: Icon(Icons.list)),
-          BottomNavigationBarItem(title: Text('消息'),icon: Icon(Icons.chat)),
-          BottomNavigationBarItem(title: Text('购物车'),icon: Icon(Icons.shopping_cart)),
-          BottomNavigationBarItem(title: Text('我的淘宝'),icon: Icon(Icons.person)),
+          BottomNavigationBarItem(title: Text('首页'), icon: Icon(Icons.home)),
+          BottomNavigationBarItem(title: Text('微淘'), icon: Icon(Icons.list)),
+          BottomNavigationBarItem(title: Text('消息'), icon: Icon(Icons.chat)),
+          BottomNavigationBarItem(
+              title: Text('购物车'), icon: Icon(Icons.shopping_cart)),
+          BottomNavigationBarItem(
+              title: Text('我的淘宝'), icon: Icon(Icons.person)),
         ],
         onTap: _currentTap,
       ),
