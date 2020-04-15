@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ninghui_flutter/HomePage.dart';
 import 'package:ninghui_flutter/PostData.dart';
 
 void main() => runApp(MyApp());
@@ -25,11 +26,17 @@ class GridViewBuilde extends StatefulWidget {
 }
 
 class _GridViewStateBuilder extends State<GridViewBuilde> {
-  Widget _gridViewItembuilder(BuildContext context, int index) {
-    return Container(
-      child: Image.network(postList[index].imageUrl, fit: BoxFit.cover),
-    );
+
+  int _currentIndex = 0;
+
+  Widget _currentBody = HomePage();
+
+  void _currentTap(int index){
+
   }
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -38,14 +45,17 @@ class _GridViewStateBuilder extends State<GridViewBuilde> {
         title: Text('照片墙'),
         elevation: 2.0,
       ),
-      body: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            crossAxisSpacing: 8.0,
-            mainAxisSpacing: 8.0
-        ),
-        itemBuilder: _gridViewItembuilder,
-        itemCount: postList.length,
+      body:_currentBody,
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(title: Text('首页'),icon: Icon(Icons.home)),
+          BottomNavigationBarItem(title: Text('微淘'),icon: Icon(Icons.list)),
+          BottomNavigationBarItem(title: Text('消息'),icon: Icon(Icons.chat)),
+          BottomNavigationBarItem(title: Text('购物车'),icon: Icon(Icons.shopping_cart)),
+          BottomNavigationBarItem(title: Text('我的淘宝'),icon: Icon(Icons.person)),
+        ],
+        onTap: _currentTap,
       ),
     );
   }
