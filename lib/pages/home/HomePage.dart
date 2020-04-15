@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/BasicPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/FormPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/LayoutPage.dart';
-import 'package:ninghui_flutter/pages/home/tabPage/NavigatorPages.dart';
-import 'package:ninghui_flutter/pages/home/tabPage/SliverPages.dart';
-import 'package:ninghui_flutter/pages/home/tabPage/ViewPages.dart';
+import 'package:ninghui_flutter/pages/home/tabPage/NavigatorPage.dart';
+import 'package:ninghui_flutter/pages/home/tabPage/SliverPage.dart';
+import 'package:ninghui_flutter/pages/home/tabPage/ViewPage.dart';
+import 'package:ninghui_flutter/pages/main/MaterialPage.dart';
 import '../main/DrawerPage.dart';
 import '../main/PhotoListView.dart';
 
@@ -47,7 +48,7 @@ class HomePage extends StatelessWidget{
             children: <Widget>[
               PhotoListView(),
               BasicPage(),
-              LayoutPage(),
+              MaterialPage(),
               ViewPages(),
               SliverPages(),
               NavigatorPages(),

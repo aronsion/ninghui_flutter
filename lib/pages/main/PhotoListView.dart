@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ninghui_flutter/model/post.dart';
-import 'package:ninghui_flutter/pages/home/detail/PostShowPages.dart';
+import 'package:ninghui_flutter/pages/home/detail/PostShowPage.dart';
 
 class PhotoListView extends StatelessWidget {
 

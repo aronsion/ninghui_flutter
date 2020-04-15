@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/FormPage.dart';
 import 'package:ninghui_flutter/pages/main/BottomNavigationBarPage.dart';
+import 'package:ninghui_flutter/pages/main/MaterialPage.dart';
 
 void main() => runApp(MyApp());
 
