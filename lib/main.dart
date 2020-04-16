@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ninghui_flutter/HomePage.dart';
-import 'package:ninghui_flutter/PostData.dart';
+import 'package:ninghui_flutter/ViewPage.dart';
+import 'package:ninghui_flutter/pages/HomePage.dart';
 
 void main() => runApp(MyApp());
 
@@ -36,7 +36,7 @@ class _GridViewStateBuilder extends State<GridViewBuilde> {
         _currentBody = HomePage();
         break;
       case 1:
-        _currentBody = HomePage();
+        _currentBody = ViewPages();
         break;
       case 2:
         _currentBody = HomePage();

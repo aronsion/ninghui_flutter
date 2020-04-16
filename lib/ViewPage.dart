@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ninghui_flutter/PostData.dart';
+import 'package:ninghui_flutter/model/PostData.dart';
 
 class ViewPages extends StatefulWidget {
   @override
