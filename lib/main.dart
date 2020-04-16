@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ninghui_flutter/ViewPage.dart';
+import 'package:ninghui_flutter/pages/ChatPage.dart';
 import 'package:ninghui_flutter/pages/HomePage.dart';
 
 void main() => runApp(MyApp());
@@ -39,7 +40,7 @@ class _GridViewStateBuilder extends State<GridViewBuilde> {
         _currentBody = ViewPages();
         break;
       case 2:
-        _currentBody = HomePage();
+        _currentBody = ChatPage();
         break;
       case 3:
         _currentBody = HomePage();
