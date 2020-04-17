@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ninghui_flutter/ViewPage.dart';
 import 'package:ninghui_flutter/pages/ChatPage.dart';
 import 'package:ninghui_flutter/pages/HomePage.dart';
+import 'package:ninghui_flutter/pages/ShoppingPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -43,7 +45,7 @@ class _GridViewStateBuilder extends State<GridViewBuilde> {
         _currentBody = ChatPage();
         break;
       case 3:
-        _currentBody = HomePage();
+        _currentBody = ShoppingPage();
         break;
       case 4:
         _currentBody = HomePage();

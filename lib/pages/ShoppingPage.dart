@@ -13,7 +13,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
       padding: EdgeInsets.all(8.0),
       child: ListView(
         children: <Widget>[
-          ListItem(title: '',page: StepperPage(),)
+          ListItem(title: 'Stepper',page: StepperPage(),)
         ],
       ),
     );
@@ -26,7 +26,6 @@ class _ShoppingPageState extends State<ShoppingPage> {
 class ListItem extends StatelessWidget {
   final String title;
   final Widget page;
-
 
   ListItem({this.title, this.page});
 

@@ -8,6 +8,14 @@ class StepperPage extends StatefulWidget {
 class _StepperPageState extends State<StepperPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Stepper'),
+        elevation: 0.0,
+        actions: <Widget>[
+          Icon(Icons.search)
+        ],
+      ),
+    );
   }
 }
