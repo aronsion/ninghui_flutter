@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ninghui_flutter/pages/home/tabPage/CardPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/StepperPage.dart';
 
 class MaterialPage extends StatefulWidget {
@@ -12,6 +13,7 @@ class _MaterialPageState extends State<MaterialPage> {
     return ListView(
       children: <Widget>[
         ListItem(title: 'Stepper', page: StepperPage()),
+        ListItem(title: 'Card',page: CardPage(),)
       ],
     );
   }
