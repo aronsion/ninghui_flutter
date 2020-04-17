@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ninghui_flutter/pages/home/tabPage/LayoutPage.dart';
+import 'package:ninghui_flutter/pages/home/tabPage/StepperPage.dart';
 
 class MaterialPage extends StatefulWidget {
   @override
@@ -11,11 +11,13 @@ class _MaterialPageState extends State<MaterialPage> {
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
-        ListItem(title: 'Stepper', page: LayoutPage()),
+        ListItem(title: 'Stepper', page: StepperPage()),
       ],
     );
   }
 }
+
+
 
 class ListItem extends StatelessWidget {
   final String title;

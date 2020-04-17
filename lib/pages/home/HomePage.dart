@@ -5,7 +5,7 @@ import 'package:ninghui_flutter/pages/home/tabPage/LayoutPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/NavigatorPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/SliverPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/ViewPage.dart';
-import 'package:ninghui_flutter/pages/main/MaterialPage.dart';
+import 'package:ninghui_flutter/pages/home/tabPage/MaterialPage.dart';
 import '../main/DrawerPage.dart';
 import '../main/PhotoListView.dart';
 
