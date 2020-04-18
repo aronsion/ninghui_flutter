@@ -32,24 +32,32 @@ class GridViewBuilde extends StatefulWidget {
 class _GridViewStateBuilder extends State<GridViewBuilde> {
   int _currentIndex = 0;
 
+  String title = '首页';
+
+
   Widget _currentBody = HomePage();
 
   void _currentTap(int index) {
     switch (index) {
       case 0:
         _currentBody = HomePage();
+        title = '首页';
         break;
       case 1:
         _currentBody = ViewPages();
+        title = '微淘';
         break;
       case 2:
         _currentBody = ChatPage();
+        title = '消息';
         break;
       case 3:
         _currentBody = ShoppingPage();
+        title = '购物车';
         break;
       case 4:
         _currentBody = MyPage();
+        title = '我的淘宝';
         break;
     }
     setState(() {
@@ -61,7 +69,7 @@ class _GridViewStateBuilder extends State<GridViewBuilde> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('照片墙'),
+        title: Text(title),
         elevation: 2.0,
       ),
       body: _currentBody,
