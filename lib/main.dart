@@ -8,14 +8,13 @@ import 'package:ninghui_flutter/pages/ShoppingPage.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepOrange,
       ),
       home: GridViewBuilde(),
     );
@@ -77,7 +76,7 @@ class _GridViewStateBuilder extends State<GridViewBuilde> {
         currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
         showUnselectedLabels: true,
-        selectedItemColor: const Color(0xffff678f),
+        selectedItemColor: Colors.deepOrange,
         unselectedItemColor: const Color(0xff666666),
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(title: Text('首页'), icon: Icon(Icons.home)),
