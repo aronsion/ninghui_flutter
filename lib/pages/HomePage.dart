@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../model/PostData.dart';
+import 'package:ninghui_flutter/model/PostData.dart';
 
 class HomePage extends StatelessWidget {
 
