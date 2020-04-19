@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ninghui_flutter/pages/home/tabPage/BottomSheetPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/CardPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/ChipPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/DataTablePage.dart';
@@ -23,7 +24,8 @@ class _MaterialPageState extends State<MaterialPage> {
         ListItem(title: 'DataTable',page: DataTablePage(),),
         ListItem(title: 'Chip',page: ChipPage(),),
         ListItem(title: 'ExpansionPanel',page: ExpansionPanelPage(),),
-        ListItem(title: 'SnackBar',page: SnackBarPage(),)
+        ListItem(title: 'SnackBar',page: SnackBarPage(),),
+        ListItem(title: 'BottomSHeet',page: BottomSheetPage(),)
       ],
     );
   }
