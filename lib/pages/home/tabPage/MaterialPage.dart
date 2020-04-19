@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/CardPage.dart';
+import 'package:ninghui_flutter/pages/home/tabPage/ChipPage.dart';
+import 'package:ninghui_flutter/pages/home/tabPage/DataTablePage.dart';
+import 'package:ninghui_flutter/pages/home/tabPage/ExpansionPanelPage.dart';
+import 'package:ninghui_flutter/pages/home/tabPage/PaginatedDataTablePage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/StepperPage.dart';
 
 class MaterialPage extends StatefulWidget {
@@ -13,7 +17,11 @@ class _MaterialPageState extends State<MaterialPage> {
     return ListView(
       children: <Widget>[
         ListItem(title: 'Stepper', page: StepperPage()),
-        ListItem(title: 'Card',page: CardPage(),)
+        ListItem(title: 'Card',page: CardPage(),),
+        ListItem(title: 'PaginatedDataTable',page: PaginatedDataTablePage(),),
+        ListItem(title: 'DataTable',page: DataTablePage(),),
+        ListItem(title: 'Chip',page: ChipPage(),),
+        ListItem(title: 'ExpansionPanel',page: ExpansionPanelPage(),),
       ],
     );
   }
