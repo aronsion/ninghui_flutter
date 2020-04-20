@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ninghui_flutter/model/PostData.dart';
+import 'package:ninghui_flutter/pages/details.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -8,8 +9,11 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var imgList = [
-    'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2877516247,37083492&fm=26&gp=0.jpg',
-    'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1582796218195&di=04ce93c4ac826e19067e71f916cec5d8&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F344fda8b47808261c946c81645bff489c008326f15140-koiNr3_fw658'
+    'https://resources.ninghao.org/images/candy-shop.jpg',
+    'https://resources.ninghao.org/images/childhood-in-a-picture.jpg',
+    'https://resources.ninghao.org/images/contained.jpg',
+    'https://resources.ninghao.org/images/dragon.jpg',
+    'https://resources.ninghao.org/images/free_hugs.jpg'
   ];
   PageController _pageController;
 
@@ -20,6 +24,7 @@ class _HomePageState extends State<HomePage> {
 
   //view page height
   double _height = 230.0;
+  double _height2= 830.0;
 
   @override
   void initState() {
@@ -38,15 +43,67 @@ class _HomePageState extends State<HomePage> {
     _pageController.dispose();
   }
 
+  Widget _listItemBuilder(BuildContext context, int index) {
+    return Container(
+      color: Colors.white,
+      margin: EdgeInsets.all(8.0),
+      child: Stack(
+        children: <Widget>[
+          Column(
+            children: <Widget>[
+              AspectRatio(
+                aspectRatio: 16 / 9,
+                child:
+                    Image.network(postList[index].imageUrl, fit: BoxFit.cover),
+              ),
+              SizedBox(height: 16.0),
+              Text(postList[index].title,
+                  style: Theme.of(context).textTheme.title),
+              Text(postList[index].author,
+                  style: Theme.of(context).textTheme.subhead),
+              SizedBox(height: 16.0),
+            ],
+          ),
+          Positioned.fill(
+            child: Material(
+              color: Colors.transparent,
+              child: InkWell(
+                  splashColor: Colors.white.withOpacity(0.3),
+                  highlightColor: Colors.white.withOpacity(0.1),
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => PostShow(post: postList[index])));
+                  }),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-        height: _height,
-        child: PageView.builder(
-          itemBuilder: (context, index) => _buildPageItem(index),
-          itemCount: 10,
-          controller: _pageController,
-        ));
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Container(
+            height: _height,
+            child: PageView.builder(
+              itemBuilder: (context, index) => _buildPageItem(index),
+              itemCount: 10,
+              controller: _pageController,
+            )
+        ),
+        Container(
+          height: _height2,
+          padding: EdgeInsets.all(16.0),
+          child: ListView.builder(
+            itemCount: postList.length,
+            itemBuilder: _listItemBuilder,
+          ),
+        )
+      ],
+    );
   }
 
   _buildPageItem(int index) {
