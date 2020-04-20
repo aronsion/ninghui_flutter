@@ -4,6 +4,7 @@ import 'package:ninghui_flutter/pages/home/tabPage/CardPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/ChipPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/DataTablePage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/ExpansionPanelPage.dart';
+import 'package:ninghui_flutter/pages/home/tabPage/LayoutPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/PaginatedDataTablePage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/SnackBarPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/StepperPage.dart';
@@ -23,9 +24,10 @@ class _MaterialPageState extends State<MaterialPage> {
         ListItem(title: 'PaginatedDataTable',page: PaginatedDataTablePage(),),
         ListItem(title: 'DataTable',page: DataTablePage(),),
         ListItem(title: 'Chip',page: ChipPage(),),
+        ListItem(title: 'Layout',page: LayoutPage(),),
         ListItem(title: 'ExpansionPanel',page: ExpansionPanelPage(),),
         ListItem(title: 'SnackBar',page: SnackBarPage(),),
-        ListItem(title: 'BottomSHeet',page: BottomSheetPage(),)
+        ListItem(title: 'BottomSheet',page: BottomSheetPage(),),
       ],
     );
   }
@@ -43,6 +45,7 @@ class ListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(title),
+      leading: Icon(Icons.map),
       onTap: () => {
         Navigator.of(context).push(
           MaterialPageRoute(builder: (context)=>page)
