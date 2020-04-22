@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/AlertDialogPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/BottomSheetPage.dart';
+import 'package:ninghui_flutter/pages/home/tabPage/ButtonPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/CardPage.dart';
+import 'package:ninghui_flutter/pages/home/tabPage/CheckboxPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/ChipPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/DataTablePage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/DataTimePage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/ExpansionPanelPage.dart';
+import 'package:ninghui_flutter/pages/home/tabPage/FloatingActionButtonPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/LayoutPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/PaginatedDataTablePage.dart';
+import 'package:ninghui_flutter/pages/home/tabPage/PopupMenuButtonPage.dart';
+import 'package:ninghui_flutter/pages/home/tabPage/RadioPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/SimpleDialogPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/SliderPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/SnackBarPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/StepperPage.dart';
+import 'package:ninghui_flutter/pages/home/tabPage/Switchpage.dart';
 
 class MaterialPage extends StatefulWidget {
   @override
@@ -35,11 +41,18 @@ class _MaterialPageState extends State<MaterialPage> {
         ListItem(title: 'AlertDialog',page: AlertDialogPage(),),
         ListItem(title: 'SimpleDialog',page: SimpleDialogPage(),),
         ListItem(title:'Date & Time',page: DataTimePage(),),
-        ListItem(title: 'Slide',page: SliderPage(),)
+        ListItem(title: 'Slide',page: SliderPage(),),
+        ListItem(title: 'Switch',page: SwitchPage(),),
+        ListItem(title: 'Radio', page: RadioPage()),
+        ListItem(title: 'Checkbox', page: CheckboxPage()),
+        ListItem(title: 'PopupMenuButton', page: PopupMenuButtonPage()),
+        ListItem(title: 'Button', page: ButtonPage()),
+        ListItem(title: 'FloatingActionButton', page: FloatingActionButtonPage()),
       ],
     );
   }
 }
+
 
 
 
