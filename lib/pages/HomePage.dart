@@ -94,14 +94,14 @@ class _HomePageState extends State<HomePage> {
               controller: _pageController,
             )
         ),
-        Container(
-          height: _height2,
-          padding: EdgeInsets.all(16.0),
-          child: ListView.builder(
-            itemCount: postList.length,
-            itemBuilder: _listItemBuilder,
-          ),
-        )
+//        Container(
+//          height: _height2,
+//          padding: EdgeInsets.all(16.0),
+//          child: ListView.builder(
+//            itemCount: postList.length,
+//            itemBuilder: _listItemBuilder,
+//          ),
+//        )
       ],
     );
   }
