@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ninghui_flutter/pages/home/tabPage/AlertDialogPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/BottomSheetPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/CardPage.dart';
 import 'package:ninghui_flutter/pages/home/tabPage/ChipPage.dart';
@@ -28,6 +29,7 @@ class _MaterialPageState extends State<MaterialPage> {
         ListItem(title: 'ExpansionPanel',page: ExpansionPanelPage(),),
         ListItem(title: 'SnackBar',page: SnackBarPage(),),
         ListItem(title: 'BottomSheet',page: BottomSheetPage(),),
+        ListItem(title: 'AlertDialog',page: AlertDialogPage(),),
       ],
     );
   }
